@@ -17,7 +17,7 @@
 //
 // You'll need a GitHub token, you can re-use this one:
 //
-//  0a7d5c3cad9a6dbec2d9 9a5222cf49062a4c1ef7
+//  'b246e75ae55e51e145' '156bcb08bbe633a8c25ce4';
 //
 // (Just remove the space)
 //
@@ -139,9 +139,9 @@ function git(args) {
     // Highlight React and React DOM changes inline
     // e.g. react: `react.production.min.js`: -3%, `react.development.js`: +4%
 
-    if (packagesToShow.includes('react')) {
+    if (packagesToShow.includes('react-use-components')) {
       const reactProd = results.find(
-        r => r.bundleType === 'UMD_PROD' && r.packageName === 'react'
+        r => r.bundleType === 'UMD_PROD' && r.packageName === 'react-use-components'
       );
       if (
         reactProd.prevFileSizeChange !== 0 ||
@@ -150,20 +150,6 @@ function git(args) {
         const changeSize = addPercent(reactProd.prevFileSizeChange, true);
         const changeGzip = addPercent(reactProd.prevGzipSizeChange, true);
         markdown(`React: size: ${changeSize}, gzip: ${changeGzip}`);
-      }
-    }
-
-    if (packagesToShow.includes('react-dom')) {
-      const reactDOMProd = results.find(
-        r => r.bundleType === 'UMD_PROD' && r.packageName === 'react-dom'
-      );
-      if (
-        reactDOMProd.prevFileSizeChange !== 0 ||
-        reactDOMProd.prevGzipSizeChange !== 0
-      ) {
-        const changeSize = addPercent(reactDOMProd.prevFileSizeChange, true);
-        const changeGzip = addPercent(reactDOMProd.prevGzipSizeChange, true);
-        markdown(`ReactDOM: size: ${changeSize}, gzip: ${changeGzip}`);
       }
     }
 
