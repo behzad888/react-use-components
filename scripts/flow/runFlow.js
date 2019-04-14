@@ -18,7 +18,6 @@ async function runFlow(renderer, args) {
       'Running Flow on the ' + chalk.yellow(renderer) + ' renderer...',
     );
     let cmd = __dirname + '/../../node_modules/.bin/flow';
-    
     if (process.platform === 'win32') {
       cmd = cmd.replace(/\//g, '\\') + '.cmd';
     }
@@ -31,18 +30,17 @@ async function runFlow(renderer, args) {
       if (code !== 0) {
         console.error(
           'Flow failed for the ' + chalk.red(renderer) + ' renderer',
-          );
-          console.log();
-          process.exit(code);
-        } else {
-          console.log(
-            'Flow passed for the ' + chalk.green(renderer) + ' renderer',
-            );
-            resolve();
-          }
-        });
-      });
-    }
-    
-    module.exports = runFlow;
-    
+        );
+        console.log();
+        process.exit(code);
+      } else {
+        console.log(
+          'Flow passed for the ' + chalk.green(renderer) + ' renderer',
+        );
+        resolve();
+      }
+    });
+  });
+}
+
+module.exports = runFlow;

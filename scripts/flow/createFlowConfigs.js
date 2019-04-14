@@ -23,7 +23,6 @@ function writeConfig(renderer, isFizzSupported) {
   mkdirp.sync(folder);
 
   //TODO: sm-edit: add type infoes 
-  const fizzRenderer = isFizzSupported ? renderer : 'custom';
   const config = configTemplate.replace(
     '%RENDERER_FLOW_OPTIONS%',
     `
