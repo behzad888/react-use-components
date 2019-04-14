@@ -86,15 +86,6 @@ async function copyRNShims() {
     // React Native
     //TODO: sm-edit: copy types
     asyncCopyTo(`${__dirname}/shims/react-native`, 'build/react-native/shims'),
-    // asyncCopyTo(
-    //   require.resolve('shared/ReactTypes.js'),
-    //   'build/react-native/shims/ReactTypes.js'
-    // ),
-    // asyncCopyTo(
-    //   require.resolve('react-native-renderer/src/ReactNativeTypes.js'),
-    //   'build/react-native/shims/ReactNativeTypes.js'
-    // ),
-    asyncCopyTo(`${__dirname}/shims/react-native-fb`, 'build/react-native/fb'),
   ]);
 }
 

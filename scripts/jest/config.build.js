@@ -22,13 +22,6 @@ const packages = readdirSync(packagesRoot).filter(dir => {
 // Create a module map to point React packages to the build output
 const moduleNameMapper = {};
 
-// Allow bundle tests to read (but not write!) default feature flags.
-// This lets us determine whether we're running in Fire mode
-// without making relevant tests internal-only.
-moduleNameMapper[
-  '^shared/ReactFeatureFlags'
-] = `<rootDir>/packages/shared/forks/ReactFeatureFlags.readonly`;
-
 // Map packages to bundles
 packages.forEach(name => {
   // Root entry point

@@ -16,18 +16,6 @@ declare var __REACT_DEVTOOLS_GLOBAL_HOOK__: any; /*?{
   inject: ?((stuff: Object) => void)
 };*/
 
-// ReactFeatureFlags www fork
-declare module 'ReactFeatureFlags' {
-  declare module.exports: any;
-}
-
-// ReactFiberErrorDialog www fork
-declare module 'ReactFiberErrorDialog' {
-  declare module.exports: {
-    showErrorDialog: (error: mixed) => boolean,
-  };
-}
-
 // EventListener www fork
 declare module 'EventListener' {
   declare module.exports: {
